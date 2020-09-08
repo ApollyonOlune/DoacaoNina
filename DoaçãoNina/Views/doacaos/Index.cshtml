@@ -1,35 +1,45 @@
 ﻿@model IEnumerable<DoaçãoNina.Models.doacao>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Doar Agora ❤";
 }
 
-<h1>Index</h1>
+<h1>Doar agora ❤</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h6>Sua doação é muito importante, pois vai salvar a vida da Nina!</h6>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.A)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.A)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+    <tr>
+        <th>
+            DOAR POR TRANSFERÊNCIA
+        </th>
+        <th>
+            DOAR POR BOLETO, CARTÃO DE DEBITO OU CARTÃO DE CRÉDITO
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <img src="~/img/bb.jpg" />
+        </th>
+        <th>
+            <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+            <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+                <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                <input type="hidden" name="currency" value="BRL" />
+                <input type="hidden" name="receiverEmail" value="matheusfarias26@gmail.com" />
+                <input type="hidden" name="iot" value="button" />
+                <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            </form>
+            <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <p>Titular: Matheus Pinto Farias</p>
+            <p>CPF: 069.034.803-74</p>
+            <p>Banco: Banco do Brasil</p>
+            <p>Agência: 1295-5</p>
+            <p>Conta: 63678-9</p>
+            <p>Conta Corrente</p>
+        </th>
+    </tr>
 </table>
