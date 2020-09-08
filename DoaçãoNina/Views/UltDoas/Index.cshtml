@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DoaçãoNina.Models.UltDoa>
+
+@{
+    ViewData["Title"] = "Ultimas Doações Recebidas ❤";
+}
+
+<h1>Ultimas Doações Recebidas ❤</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

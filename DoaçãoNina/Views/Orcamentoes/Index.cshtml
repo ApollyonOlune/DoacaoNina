@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DoaçãoNina.Models.Orcamento>
+
+@{
+    ViewData["Title"] = "Custos 💸";
+}
+
+<h1>Custos 💸</h1>
+<h4>Objetivo Atual: Comprar medicação pré-operatório.</h4>
+<h6>Ultima vez atualizado 08/09/2020 às 14:50.</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Catergoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catergoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
